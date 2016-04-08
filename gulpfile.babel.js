@@ -102,8 +102,8 @@ function babelSourceFolderArray(iBabelSourcePath) {
     return foldersWatchArray;
 }
 
-const kBabelSourcePath = "server/src-es6";
-const kBabelDestinationPath = "server/app";
+const kBabelSourcePath = "sources-es6";
+const kBabelDestinationPath = "sources-js";
 
 gulp.task("babel", function() {
     babelFolderTree(kBabelSourcePath, kBabelDestinationPath);
