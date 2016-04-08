@@ -3,8 +3,8 @@
   "version": "0.2.0",
   "description": "Angular Services to get true time by syncing with server",
   "scripts": {
-    "build": "babel angular-services-es6 --presets babel-preset-es2015 --out-dir angular-services",
-    "prepublish": "npm run build"
+    "abuild": "babel angular-services-es6 --presets babel-preset-es2015 --out-dir angular-services",
+    "aprepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -19,8 +19,15 @@
   ],
   "author": "Nikolai Svakhin <svakhine@adobe.com> (https://twitter.com/Nikolai3d)",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
+    "babel": "^6.5.2",
     "babel-cli": "^6.6.5",
-    "babel-preset-es2015": "^6.6.0"
+    "babel-preset-es2015": "^6.6.0",
+    "eslint": "^2.7.0",
+    "eslint-config-google": "^0.4.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-print": "^2.0.1",
+    "merge-stream": "^1.0.0"
   }
 }
