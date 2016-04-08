@@ -1,15 +1,16 @@
-var gulp = require('gulp');
-var util = require('gulp-util');
-// var concat = require('gulp-concat');
-// var browserify = require('gulp-browserify');
-var babel = require('gulp-babel');
-var fs = require('fs');
-var path = require('path');
-var rename = require('gulp-rename');
-var print = require('gulp-print');
-var merge = require('merge-stream');
+const gulp = require('gulp');
+const util = require('gulp-util');
+// const  concat = require('gulp-concat');
+// const  browserify = require('gulp-browserify');
+const babel = require('gulp-babel');
+const rename = require('gulp-rename');
+const print = require('gulp-print');
 
-var env = process.env.NODE_ENV || 'development';
+const fs = require('fs');
+const path = require('path');
+const merge = require('merge-stream');
+
+const env = process.env.NODE_ENV || 'development';
 
 util.log("ENV === '" + env + "'");
 
@@ -46,7 +47,7 @@ function getFolders(dir) {
  * @return {Array} array of subfolders' basenames
  */
 function getBabelSourceFolders(iBabelSourcePath) {
-    var folders = getFolders(iBabelSourcePath);
+    const folders = getFolders(iBabelSourcePath);
     folders.push("./");
     return folders;
 }
@@ -60,15 +61,15 @@ function getBabelSourceFolders(iBabelSourcePath) {
  */
 function babelFolderTree(iBabelSourcePath, iBabelDestinationPath) {
 
-    var babelFileLogPrintFunction = function(filepath) {
+    const babelFileLogPrintFunction = function(filepath) {
         return "Babel Transcoding ES6: " + filepath;
     };
 
-    var babelDestination = function(filepath) {
+    const babelDestination = function(filepath) {
         return "Babel Result JS is at : " + filepath;
     };
 
-    var tasks = getBabelSourceFolders(iBabelSourcePath).map(function(iFolder) {
+    const tasks = getBabelSourceFolders(iBabelSourcePath).map(function(iFolder) {
 
         // See .babelrc for babel() configuration, we use es2015 profile.
 
@@ -105,11 +106,11 @@ function babelSourceFolderArray(iBabelSourcePath) {
 const kBabelSourcePath = "sources-es6";
 const kBabelDestinationPath = "sources-js";
 
-gulp.task("babel", function() {
+gulp.task("babel", () => {
     babelFolderTree(kBabelSourcePath, kBabelDestinationPath);
 });
 
-gulp.task("watch", function() {
+gulp.task("watch", () => {
     // livereload.listen();
     gulp.watch(babelSourceFolderArray(kBabelSourcePath), ['babel']);
 });
