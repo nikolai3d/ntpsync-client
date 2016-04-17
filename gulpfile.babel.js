@@ -114,3 +114,5 @@ gulp.task("watch", () => {
     // livereload.listen();
     gulp.watch(babelSourceFolderArray(kBabelSourcePath), ['babel']);
 });
+
+gulp.task('default', ['babel', 'watch']);
