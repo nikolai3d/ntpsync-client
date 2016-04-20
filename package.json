@@ -1,5 +1,5 @@
 {
-  "name": "babel-seed",
+  "name": "ntpsync-client",
   "version": "1.0.0",
   "description": "NTP Sync Angular Client Libraries",
   "repository": {
