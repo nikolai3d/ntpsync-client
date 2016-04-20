@@ -1,6 +1,8 @@
 /* global gApp */
-/* global AngularInstallIntervalFunction */
+import AngularInstallIntervalFunction from './angular-common';
 (() => {
+
+
 
     const kServerNTPDeltaRequestFrequencyMS = 15000; // How often we request server for its Server <-> NTP delta
     /**

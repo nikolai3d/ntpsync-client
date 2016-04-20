@@ -1,5 +1,5 @@
 /**
- * AngularInstallIntervalFunction() Attaches An Interval to fire every time each iIntervalTimeMS,
+ * _AngularInstallIntervalFunction() Attaches An Interval to fire every time each iIntervalTimeMS,
  * and makes sure it's destroyed when the scope goes down
  * @param {function}    iFunction: A function to run
  * @param {Number}      iIntervalTimeMS: Number of milliseconds between function runs
@@ -8,7 +8,7 @@
  * @param {Service}     iScope: a $scope or $rootScope service, something we can attach to so we can properly uninstall
  * the interval when the containers go down. https://docs.angularjs.org/api/ng/service/$rootScope
  */
-function AngularInstallIntervalFunction(iFunction, iIntervalTimeMS, iIntervalService, iScope) {
+function _AngularInstallIntervalFunction(iFunction, iIntervalTimeMS, iIntervalService, iScope) {
 
     var intervalHandler = iIntervalService(() => {
         iFunction();
@@ -26,7 +26,4 @@ function AngularInstallIntervalFunction(iFunction, iIntervalTimeMS, iIntervalSer
     });
 
 }
-
-module.exports = {
-    AngularInstallIntervalFunction
-};
+export const AngularInstallIntervalFunction = _AngularInstallIntervalFunction;
