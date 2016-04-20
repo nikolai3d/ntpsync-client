@@ -1,5 +1,7 @@
 /* global gApp */
-import AngularInstallIntervalFunction from './angular-common';
+import {
+    AngularInstallIntervalFunction
+} from './angular-common';
 (() => {
 
 
