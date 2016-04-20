@@ -26,3 +26,7 @@ function AngularInstallIntervalFunction(iFunction, iIntervalTimeMS, iIntervalSer
     });
 
 }
+
+module.exports = {
+    AngularInstallIntervalFunction
+};
